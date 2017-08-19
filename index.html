@@ -1,0 +1,40 @@
+<!<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript Training</title>
+</head>
+<body>
+
+    <script src="lib/Vehiculo.js"></script>
+    <script src="lib/TallerVehiculos.js"></script>
+    <script>
+
+        var v1 = new Vehiculo('Toyota','Corolla','XIY082','Beige');
+        var v2 = new Vehiculo('Chevrolet','Aveo','78978','Azul');
+        var v3 = new Vehiculo('Mazda','3','FD456GH','Plateado');
+        var v4 = new Vehiculo('Ford','Fiesta Move','CV471BV','Negro');
+        var v5 = new Vehiculo('Toyota','Yaris','dty745','Blanco');
+
+        var Taller = new TallerVehiculos();
+
+        Taller.addVehicle(v1);
+        Taller.addVehicle(v2);
+        Taller.addVehicle(v3);
+        Taller.addVehicle(v4);
+        Taller.addVehicle(v5);
+        Taller.addVehicle(v1);
+        Taller.addVehicle(v5);
+
+        console.log(Taller.getVehicles().length);
+        console.log(JSON.stringify(Taller.getVehicles()));
+        Taller.removeVehicle('XIY082');
+        console.log(Taller.getVehicles().length);
+        console.log(Taller.findVehicle('78978'));
+
+    </script>
+</body>
+</html>
