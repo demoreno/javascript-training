@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript Training</title>
+</head>
+<body>
+
+<script src="PersistProxy.js"></script>
+<script src="LocalStorageProxy.js"></script>
+<script src="SessionStorageProxy.js"></script>
+<script>
+
+    var proxy = new PersistProxy(new LocalStorageProxy());
+    proxy.save("nombre","David");
+
+    console.log(proxy.get("nombre"));
+    proxy.delete("nombre");
+    console.log(proxy.get("nombre"));
+    proxy.save("apellido","Moreno");
+    proxy.save("otro","Valor");
+    proxy.flush();
+
+    var proxy = new PersistProxy(new SessionStorageProxy());
+    proxy.save("nombre","Marco");
+
+    console.log(proxy.get("nombre"));
+    proxy.delete("nombre");
+    console.log(proxy.get("nombre"));
+    proxy.save("apellido","Villarreal");
+    proxy.save("otro","Valor");
+
+    proxy.flush();
+
+
+
+
+</script>
+</body>
+</html>
