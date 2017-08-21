@@ -9,9 +9,10 @@
 </head>
 <body>
 
-<script src="PersistProxy.js"></script>
-<script src="LocalStorageProxy.js"></script>
-<script src="SessionStorageProxy.js"></script>
+<!--<script src="src/PersistProxy.js"></script>
+<script src="src/LocalStorageProxy.js"></script>
+<script src="src/SessionStorageProxy.js"></script>-->
+<script src="dist/App.js"></script>
 <script>
 
     var proxy = new PersistProxy(new LocalStorageProxy());
@@ -34,8 +35,6 @@
     proxy.save("otro","Valor");
 
     proxy.flush();
-
-
 
 
 </script>
